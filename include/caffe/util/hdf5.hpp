@@ -3,8 +3,14 @@
 
 #include <string>
 
-#include "hdf5.h"
-#include "hdf5_hl.h"
+/*
+[chao]: replaced the header path by executing the following
+        command: 
+find . -exec \
+sed -i 's/^#include "\(hdf5.*\).h/#include "hdf5\/serial\/\1.h/' {} \;
+*/
+#include "hdf5/serial/hdf5.h"
+#include "hdf5/serial/hdf5_hl.h"
 
 #include "caffe/blob.hpp"
 
